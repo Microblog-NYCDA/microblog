@@ -1,10 +1,10 @@
 <%@users.each do |user|%>
 <div class="user-container">
   <div class="User-Name">
-    <%user.name%>
+    <%=user.name%>
   </div>
 <form action="/request" method="post">
-  <input type="hidden" name="user_id" value="<%user.id%>">
+  <input type="hidden" name="user_id" value="<%=user.id%>">
   <input type="submit" value="Send Friend Request">
 </form>
 </div>
