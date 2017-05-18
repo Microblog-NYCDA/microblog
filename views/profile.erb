@@ -1,23 +1,19 @@
 
 <form action="/profile" method="post">
-  <input type="text" name="title" placeholder="Title">
-  <input type="text" name="content" placeholder="Message">
-  <input type="submit">
-
+    <input type="text" name="title" placeholder="Title">
+    <input type="text" name="content" placeholder="Message">
+    <input type="submit">
 </form>
+
 <%@posts.each do |post|%>
-<div class="post">
-
-
-<div class="post-title">
-  <a href='/post/<%=post.id%>'>
-
-  <%=post.title%>
-</a>
-  </div>
-  <div class="post-content">
-      <%=post.content%>
-  </div>
-</div>
-
+    <div class="post">
+        <div class="post-title">
+            <a href='/post/<%=post.id%>'>
+                <%=post.title%>
+            </a>
+        </div>
+        <div class="post-content">
+            <%=post.content%>
+        </div>
+    </div>
 <%end%>
