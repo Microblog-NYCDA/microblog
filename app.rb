@@ -75,6 +75,10 @@ post '/post' do
     Comment.create(content: params[:comment], user_id: session[:user_id], post_id: session[:post_id])
     redirect '/post/' + session[:post_id]
 end
+get '/search' do
+  @users=User.all
+  erb :search
+end
 
 get '/logout' do
     session[:user_id] = nil
