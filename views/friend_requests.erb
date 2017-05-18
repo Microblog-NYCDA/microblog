@@ -1,0 +1,14 @@
+<% @requests.each do |request| %>
+
+    <div>
+        You have a new friend request from <%= User.find(request.requester_id).name %>
+    </div>
+    <form action="/friend_requests" method="post">
+        <input type="submit" name="response" value="Accept">
+        <input type="hidden" name="friend_id" value="<%= request.requester_id %>">
+    </form>
+    <form action="/friend_requests" method="post">
+        <input type="submit" name="response" value="Reject">
+    </form>
+
+<% end %>

@@ -90,6 +90,16 @@ get '/friend_requests' do
     erb :friend_requests
 end
 
+post '/friend_requests' do
+    response = params[:response]
+    if response == "Accept"
+        Friendship.create(user_id: session[:user_id], friend_id: params[:friend_id])
+        Friendship.create(user_id: params[:friend_id], friend_id: session[:user_id])
+    else
+    end
+    redirect '/friend_requests'
+end
+
 post '/request' do
   Request.create(user_id: params[:user_id], requester_id: session[:user_id])
   redirect '/search'
