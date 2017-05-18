@@ -86,6 +86,9 @@ get '/logout' do
 end
 
 
+
+
+
 get '/friend_requests' do
     @requests = Request.where(user_id: session[:user_id])
     erb :friend_requests
@@ -98,8 +101,10 @@ post '/friend_requests' do
         Friendship.create(user_id: params[:friend_id], friend_id: session[:user_id])
     else
     end
+    Request.find(params[:request_id]).delete
     redirect '/friend_requests'
 end
+
 
 post '/request' do
   Request.create(user_id: params[:user_id], requester_id: session[:user_id])
