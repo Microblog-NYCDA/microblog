@@ -4,9 +4,11 @@ require 'sinatra/activerecord'
 set :database, "sqlite3:troybook.sqlite3"
 set :sessions, true
 require './models'
+
 get '/' do
   erb :login
 end
+
 post '/login' do
   username=params[:username]
   password=params[:password]
@@ -27,11 +29,11 @@ get '/create_account' do
 end
 
 get '/profile' do
-
   @user = User.find(session[:user_id])
 	@posts = @user.posts
 	erb :profile
 end
+
 post '/profile' do
   title=params[:title]
   content=params[:content]
@@ -39,9 +41,11 @@ post '/profile' do
   Post.create(title: title, content: content, user_id: userid)
   redirect '/profile'
 end
+
 get '/sign_up' do
   erb :sign_up
 end
+
 post '/sign_up' do
   username=params[:username]
   password=params[:password]
@@ -60,6 +64,7 @@ post '/sign_up' do
     redirect '/profile'
   end
 end
+
 get '/post/:id' do
 post_id=params[:id]
 @post=Post.find(post_id)
@@ -67,6 +72,7 @@ session[:post_id]=post_id
 @comments=Comment.where(user_id: session[:user_id], post_id: post_id)
 erb :post
 end
+
 post '/post' do
   user=User.find(session[:user_id])
   post=Post.find(session[:post_id])

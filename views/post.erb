@@ -11,10 +11,8 @@
 </form>
 <%if @comments%>
     <%@comments.each do |comment|%>
-    <div>
-    <%=comment.content%>
-    </div>
-
-
+        <div>
+            <%=comment.content%>
+        </div>
     <%end%>
 <%end%>
