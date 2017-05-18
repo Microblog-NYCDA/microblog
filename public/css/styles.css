@@ -9,6 +9,12 @@
   border: 2px solid black;
   margin: 5px 0px 5px 0px; }
 
+.user-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  border-bottom: 1px solid black; }
+
 body {
   background-color: blue; }
 
