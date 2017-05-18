@@ -1,0 +1,21 @@
+<h1>Post Page</h1>
+<div>
+  <%=@post.title%>
+
+</div>
+<div>
+    <%=@post.content%>
+</div>
+<form action="/post" method="post">
+  <input type="text" name="comment" placeholder="Comment">
+  <input type="submit">
+</form>
+<%if @comments%>
+<%@comments.each do |comment|%>
+<div>
+<%=comment.content%>  
+</div>
+
+
+<%end%>
+<%end%>

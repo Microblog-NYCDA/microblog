@@ -1,0 +1,12 @@
+<form action="sign_up" method="post">
+  <input type="text" name="username" placeholder="Username">
+  <input type="text" name="password" placeholder="Password">
+  <input type="text" name="repassword" placeholder="Re-Enter Password">
+  <input type="submit">
+
+</form>
+<%if @error%>
+<div>
+  <%=@error%>
+</div>
+<%end%>
