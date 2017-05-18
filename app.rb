@@ -60,13 +60,15 @@ post '/sign_up' do
     redirect '/profile'
   end
 end
+
 get '/post/:id' do
-post_id=params[:id]
-@post=Post.find(post_id)
-session[:post_id]=post_id
-@comments=Comment.where(user_id: session[:user_id], post_id: post_id)
-erb :post
+    post_id=params[:id]
+    @post=Post.find(post_id)
+    session[:post_id]=post_id
+    @comments=Comment.where(user_id: session[:user_id], post_id: post_id)
+    erb :post
 end
+
 post '/post' do
     user=User.find(session[:user_id])
     post=Post.find(session[:post_id])
@@ -79,9 +81,11 @@ get '/logout' do
     erb :login
 end
 
-get 'friend_requests' do
+get '/friend_requests' do
     @requests = Request.where(user_id: session[:user_id])
+    erb :friend_requests
 end
+
 post '/request' do
   Request.create(user_id: params[:user_id], requester_id: session[:user_id])
   redirect '/search'
