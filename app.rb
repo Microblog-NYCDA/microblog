@@ -78,8 +78,9 @@ end
 
 get '/logout' do
     session[:user_id] = nil
+    erb :login
 end
-get '/search' do
-  @users=User.all
-erb :search
+
+get 'friend_requests' do
+    @requests = Request
 end
