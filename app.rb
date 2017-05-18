@@ -97,6 +97,7 @@ post '/friend_requests' do
         Friendship.create(user_id: params[:friend_id], friend_id: session[:user_id])
     else
     end
+    Request.find(params[:request_id]).delete
     redirect '/friend_requests'
 end
 
