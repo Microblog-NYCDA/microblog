@@ -82,5 +82,5 @@ get '/logout' do
 end
 
 get 'friend_requests' do
-    @requests = Request
+    @requests = Request.where(user_id: session[:user_id])
 end
