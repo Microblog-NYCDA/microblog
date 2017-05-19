@@ -15,6 +15,13 @@
   background-color: white;
   border-bottom: 1px solid black; }
 
+.profile-row {
+  display: flex;
+  justify-content: flex-start; }
+
+.profile-info {
+  width: 200px; }
+
 body {
   background-color: blue; }
 
