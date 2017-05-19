@@ -6,7 +6,13 @@
     <form action="/friend_requests" method="post">
         <input type="submit" name="response" value="Accept">
         <input type="hidden" name="friend_id" value="<%= request.requester_id %>">
+
+
         <input type="hidden" name="request_id" value="<%= request.id %>">
+
+
+     
+
     </form>
     <form action="/friend_requests" method="post">
         <input type="submit" name="response" value="Reject">

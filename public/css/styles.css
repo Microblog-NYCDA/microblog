@@ -67,6 +67,20 @@ a {
   border-bottom: 1px solid black;
   padding-bottom: 10px; }
 
+.flexcomment {
+  display: flex;
+  justify-content: center; }
+
+.commentcontainer {
+  width: 30%; }
+
+.postflex {
+  display: flex;
+  justify-content: center; }
+
+.post-and-comment-box {
+  width: 30%; }
+
 body {
   margin: 0; }
 

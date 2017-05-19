@@ -5,7 +5,11 @@ set :database, "sqlite3:troybook.sqlite3"
 set :sessions, true
 require './models'
 get '/' do
-  erb :login
+  if session[:user_id]!=nil
+    redirect '/wall'
+  else
+    erb :login
+  end
 end
 post '/login' do
   username=params[:username]
