@@ -1,3 +1,33 @@
+.hero-img {
+  background-image: url("/images/hero.jpg");
+  background-size: cover;
+  position: absolute;
+  height: 100%;
+  width: 100vw; }
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 24vh; }
+
+.login {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 5px;
+  text-align: center; }
+
+.login h1 {
+  text-shadow: 2px 2px black;
+  color: lightgrey; }
+
+.login form {
+  margin: 20px 0; }
+
+.login form input {
+  font-size: 16px; }
+
+.login form .btn {
+  font-size: 20px; }
+
 .post-title {
   background-color: #e9faff; }
 
@@ -16,8 +46,13 @@
 .profile-div {
   width: 30%; }
 
+.search-container {
+  display: flex;
+  justify-content: center; }
+
 .user-container {
   display: flex;
+  width: 300px;
   justify-content: space-between;
   background-color: white;
   border-bottom: 1px solid black; }
@@ -155,35 +190,5 @@ a {
 body {
   margin: 0;
   padding: 0; }
-
-.hero-img {
-  background-image: url("/images/hero.jpg");
-  background-size: cover;
-  position: absolute;
-  height: 100%;
-  width: 100vw; }
-
-.login-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 24vh; }
-
-.login {
-  background-color: rgba(0, 0, 0, 0.3);
-  padding: 5px;
-  text-align: center; }
-
-.login h1 {
-  text-shadow: 2px 2px black;
-  color: lightgrey; }
-
-.login form {
-  margin: 20px 0; }
-
-.login form input {
-  font-size: 16px; }
-
-.login form .btn {
-  font-size: 20px; }
 
 /*# sourceMappingURL=styles.css.map */

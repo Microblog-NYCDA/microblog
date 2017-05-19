@@ -1,5 +1,11 @@
+.search-container{
+    display: flex;
+    justify-content: center;
+}
+
 .user-container{
   display:flex;
+  width: 300px;
   justify-content:space-between;
   background-color:white;
   border-bottom:1px solid black;
