@@ -1,9 +1,11 @@
 .flexcomment{
 	display:flex;
 	justify-content:center;
+	margin-top:5px;
 }
 .commentcontainer{
-	width:30%;
+	width:100%;
+	border-bottom:1px solid lightgrey;
 }
 .postflex{
 	display:flex;
@@ -11,4 +13,40 @@
 }
 .post-and-comment-box{
 	width:30%;
+}
+.userandpost{
+	border:1px solid black;
+	margin-bottom:20px;
+}
+.post-user-name{
+	font-size:18px;
+	background-color:$userNameColor;
+}
+.post-user-content{
+	font-size:20px;
+}
+.allcomments{
+	width:30%;
+	border-top:1px solid lightgrey;
+	border-left:1px solid lightgrey;
+	border-right:1px solid lightgrey;
+}
+.commentnamecolor{
+	background-color:$comment-name-color;
+}
+.flexcommentinput{
+	margin-top:5px;
+	display:flex;
+	justify-content:center;
+}
+.commentinput{
+	width:81%;
+
+}
+.commentform{
+	width:30%;
+
+}
+.comment-content{
+	overflow:hidden;
 }

@@ -1,11 +1,18 @@
 .post-title{
-  background-color:white;
+  background-color:$userNameColor;
 }
 .post-content{
   background-color:white;
 }
 .post{
-  width:30%;
-  border:2px solid black;
+  width:100%;
+  border:1px solid lightgrey;
   margin:5px 0px 5px 0px;
+}
+.profile-flex{
+	display:flex;
+	justify-content:center;
+}
+.profile-div{
+	width:30%;
 }
