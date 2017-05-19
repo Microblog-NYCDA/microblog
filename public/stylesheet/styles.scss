@@ -12,3 +12,16 @@ body{
   padding:0;
   
 }
+.hero-img{
+    background-image: url('/images/hero.jpg');
+    background-size: cover;
+    height: 500px;
+    width: 100vw;
+}
+.login-container{
+    display: flex;
+    justify-content: center;
+}
+.login{
+    padding-left: 30px;
+}

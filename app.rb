@@ -31,8 +31,8 @@ get '/create_account' do
 end
 
 get '/profile' do
-
-  @user = User.find(session[:user_id])
+    @user = User.find(session[:user_id])
+    @friendships = Friendship.where(user_id: @user.id)
 	@posts = @user.posts
 	erb :profile
 end
@@ -128,6 +128,14 @@ post '/edit_profile' do
     @user.save
 
     redirect '/edit_profile'
+end
+
+post '/remove_friendship' do
+    friends = Friendship.where(user_id: session[:user_id])
+    exfriends = friends.where(friend_id: params[:friend_id]).first
+    exfriends.delete
+
+    redirect '/profile'
 end
 
 get '/wall' do

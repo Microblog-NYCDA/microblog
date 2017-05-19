@@ -22,5 +22,21 @@
 <form action="/edit_profile" method="get">
     <input type="submit" value="Edit Profile">
 </form>
+<<<<<<< HEAD
 </div>
 </div>
+=======
+
+<div class="profile-section">
+    <%= @friendships.length %> Friends:
+</div>
+<% @friendships.each do |friendship| %>
+    <div class="friend">
+        <%= User.find(friendship.friend_id).name %>
+        <form action="/remove_friendship" method="post">
+            <input type="hidden" name="friend_id" value="<%= friendship.friend_id %>">
+            <input type="submit" value="Remove friendship">
+        </form>
+    </div>
+<% end %>
+>>>>>>> 2bbe0a9d64cffff71370ca9916498ba0a56ad67e
