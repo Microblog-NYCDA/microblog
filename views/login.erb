@@ -1,14 +1,15 @@
-<div class="hero-img"></div>
-<div class="login-container">
-    <div class="login">
-        <h1>Login Page</h1>
-        <form action="/login" method="post">
-            <input type="text" name="username" placeholder="username">
-            <input type="password" name="password" placeholder="password">
-            <input type="submit" value="Sign in">
-        </form>
-        <form  action="/sign_up" method="get">
-            <input type="submit" value="Sign up">
-        </form>
+<div class="hero-img">
+    <div class="login-container">
+        <div class="login">
+            <h1>Login</h1>
+            <form action="/login" method="post">
+                <input type="text" name="username" placeholder="username">
+                <input type="password" name="password" placeholder="password">
+                <input class="btn" type="submit" value="Sign in">
+            </form>
+            <form  action="/sign_up" method="get">
+                <input class="btn" type="submit" value="Sign up">
+            </form>
+        </div>
     </div>
 </div>
