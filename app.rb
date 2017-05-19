@@ -104,3 +104,19 @@ post '/request' do
   Request.create(user_id: params[:user_id], requester_id: session[:user_id])
   redirect '/search'
 end
+
+get '/edit_profile' do
+    @user = User.find(session[:user_id])
+    erb :edit_profile
+end
+
+post '/edit_profile' do
+    @user = User.find(session[:user_id])
+    @user.name = params[:new_name]
+    @user.username = params[:new_username]
+    @user.age = params[:new_age]
+    @user.city = params[:new_city]
+    @user.save
+
+    redirect '/edit_profile'
+end

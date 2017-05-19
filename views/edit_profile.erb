@@ -1,0 +1,14 @@
+
+
+<form action="/edit_profile" method="post">
+    <h2> <%= @user.name %> </h2>
+    <input type="text" name="new_name" value="<%= @user.name %>">
+    <h3> <%= @user.username %> </h3>
+    <input type="text" name="new_username" value="<%= @user.username %>">
+    <h4> <%= @user.city %> </h4>
+    <input type="text" name="new_city" value=" <%= @user.city %> " placeholder="Enter your city here">
+    <h4> <%= @user.age %> </h4>
+    <input type="number" name="new_age" value=" <%= @user.age %> " placeholder="Enter your age here">
+
+    <input type="submit" value="Update Profile">
+</form>
