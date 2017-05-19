@@ -1,6 +1,8 @@
+$post-font:'PT Sans Narrow', sans-serif;
 @import 'profile';
 @import 'search';
+@import 'wall';
+@import 'nav';
 body{
-  background-color:blue;
-
+  margin:0;
 }
