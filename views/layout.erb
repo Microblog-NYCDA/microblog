@@ -9,22 +9,19 @@
         <title></title>
     </head>
     <body>
-
-
-
-
-
-        <nav>
-            <ul>
+        <% if session[:user_id] %>
+            <nav>
+                <ul>
                     <div class="nav-flex">
-                <li><a href="/">Home</a></li>
-                <li><a href="/profile">Profile</a></li>
-                <li><a href="/friend_requests">Friend Requests</a></li>
-                <li><a href="/search">Search for Friends</a></li>
-                <li><a href="/logout">Logout</a></li>
-              </div>
-            </ul>
-        </nav>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/profile">Profile</a></li>
+                        <li><a href="/friend_requests">Friend Requests</a></li>
+                        <li><a href="/search">Search for Friends</a></li>
+                        <li><a href="/logout">Logout</a></li>
+                  </div>
+                </ul>
+            </nav>
+        <% end %>
         <div class="yield"><%= yield %></div>
 
 

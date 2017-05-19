@@ -103,7 +103,17 @@ a {
 body {
   margin: 0; }
 
-.yield {
-  padding: 30px; }
+.hero-img {
+  background-image: url("/images/hero.jpg");
+  background-size: cover;
+  height: 500px;
+  width: 100vw; }
+
+.login-container {
+  display: flex;
+  justify-content: center; }
+
+.login {
+  padding-left: 30px; }
 
 /*# sourceMappingURL=styles.css.map */
