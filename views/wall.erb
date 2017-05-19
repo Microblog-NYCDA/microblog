@@ -1,8 +1,11 @@
 <%@posts.each do |post|%>
-
-<div class="wall-content">
-  
-  <%=post.content%>
+<div class="wall-flex">
+  <div class="wall-content">
+    <div class="post-content"><%=post.content%></div>
+    <div class="wall-comment">
+      <a href='/post/<%=post.id%>'>Comment</a>
+    </div>
+  </div>
 </div>
 
 <%end%>

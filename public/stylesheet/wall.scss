@@ -1,0 +1,27 @@
+.wall-content{
+  width:30%;
+  border: 1px solid lightgrey;
+  background-color:white;
+  margin-bottom:10px;
+
+}
+.wall-flex{
+  display:flex;
+  justify-content: center;
+}
+.wall-comment{
+  display:flex;
+  justify-content:flex-end;
+  // border-top:1px solid lightgrey;
+  background-color:#f8f9fb;
+}
+.wall-comment a{
+  font-size:12px;
+  padding-right:5px;
+  color:grey;
+}
+.post-content{
+  padding:5px 5px 5px 5px;
+  font-family: $post-font;
+  font-size:14px;
+}
