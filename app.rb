@@ -130,7 +130,7 @@ post '/edit_profile' do
     redirect '/edit_profile'
 end
 
-post '/remove_friendship' do
+post '/friendship' do
     friends = Friendship.where(user_id: session[:user_id])
     exfriends = friends.where(friend_id: params[:friend_id]).first
     exfriends.delete

@@ -1,42 +1,41 @@
 <div class="profile-flex">
-<div class="profile-div">
-<form action="/profile" method="post">
-    
-    <input type="text" name="content" placeholder="Message" class="commentinput">
-    <input type="submit">
-</form>
+    <div class="profile-div">
+        <form action="/profile" method="post">
 
-<%@posts.each do |post|%>
-    <div class="post">
-        <div class="post-title">
-            <a href='/post/<%=post.id%>'>
-                <%=User.find(post.user_id).name%>
-            </a>
-        </div>
-        <div class="post-content">
-            <%=post.content%>
-        </div>
-    </div>
-<%end%>
+            <input type="text" name="content" placeholder="Message" class="commentinput">
+            <input type="submit">
+        </form>
 
-<form action="/edit_profile" method="get">
-    <input type="submit" value="Edit Profile">
-</form>
+        <%@posts.each do |post|%>
+            <div class="post">
+                <div class="post-title">
+                    <a href='/post/<%=post.id%>'>
+                        <%=User.find(post.user_id).name%>
+                    </a>
+                </div>
+                <div class="post-content">
+                    <%=post.content%>
+                </div>
+            </div>
+        <%end%>
 
-</div>
-</div>
-
-
-<div class="profile-section">
-    <%= @friendships.length %> Friends:
-</div>
-<% @friendships.each do |friendship| %>
-    <div class="friend">
-        <%= User.find(friendship.friend_id).name %>
-        <form action="/remove_friendship" method="post">
-            <input type="hidden" name="friend_id" value="<%= friendship.friend_id %>">
-            <input type="submit" value="Remove friendship">
+        <form action="/edit_profile" method="get">
+            <input type="submit" value="Edit Profile">
         </form>
     </div>
-<% end %>
+</div>
 
+
+<div class="profile-friends">
+    <h3><%= @friendships.length %> Friends:</h3> 
+
+    <% @friendships.each do |friendship| %>
+        <div class="friend">
+            <%= User.find(friendship.friend_id).name %>
+            <form action="/friendship" method="post">
+                <input type="hidden" name="friend_id" value="<%= friendship.friend_id %>">
+                <input type="submit" value="Remove friendship">
+            </form>
+        </div>
+    <% end %>
+</div>

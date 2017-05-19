@@ -10,12 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170519145901) do
+ActiveRecord::Schema.define(version: 20170519205808) do
 
   create_table "comments", force: :cascade do |t|
     t.string "content"
     t.integer "user_id"
     t.integer "post_id"
+  end
+
+  create_table "files", force: :cascade do |t|
+    t.integer "user_id"
+    t.binary "file"
   end
 
   create_table "friendships", force: :cascade do |t|
