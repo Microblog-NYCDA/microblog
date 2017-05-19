@@ -1,13 +1,16 @@
-<%@users.each do |user|%>
-<div class="user-container">
-  <div class="User-Name">
-    <%=user.name%>
-  </div>
-<form action="/request" method="post">
-  <input type="hidden" name="user_id" value="<%=user.id%>">
-  <input type="submit" value="Send Friend Request">
-</form>
+<div class="search-container">
+    <div class="users-container">
+        <%@users.each do |user|%>
+            <div class="user-container">
+                <div class="User-Name">
+                    <%=user.name%>
+                </div>
+                <form action="/request" method="post">
+                    <input type="hidden" name="user_id" value="<%=user.id%>">
+                    <input type="submit" value="Send Friend Request">
+                </form>
+            </div>
+        <%end%>
+    </div>
+
 </div>
-
-
-<%end%>
