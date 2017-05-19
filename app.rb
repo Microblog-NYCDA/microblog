@@ -148,3 +148,10 @@ get '/wall' do
     @posts=@posts.flatten
     erb :wall
 end
+post '/addfile' do
+  file=params[:file]
+ 
+ s = File.open('philly-homeless-01.jpg', 'rb') { |io| io.read }
+  s.force_encoding('ASCII-8BIT')
+  redirect '/profile'
+end
