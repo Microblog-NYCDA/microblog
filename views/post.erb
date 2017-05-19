@@ -1,29 +1,36 @@
-<h1>Post Page</h1>
+
 <div class="postflex">
 <div class="post-and-comment-box">
-<div>
-    <%=@post.title%>
+<div class="userandpost">
+<div class="post-user-name">
+    <%=User.find(@post.user_id).name%>
 </div>
-<div>
+<div class="post-user-content">
     <%=@post.content%>
 </div>
-<form action="/post" method="post">
-    <input type="text" name="comment" placeholder="Comment">
-    <input type="submit">
-</form>
+</div>
+
 </div>
 </div>
 <%if @comments%>
     <%@comments.each do |comment|%>
     <div class="flexcomment">
-    <div class="commentcontainer">
-    <%=User.find(comment.user_id).name%>
-    <div>
-    <%=comment.content%>
-    </div>
-</div>
-</div>
-
-
+    	<div class="allcomments">
+    		<div class="commentcontainer">
+    			<div class="commentnamecolor">
+    			<%=User.find(comment.user_id).name%>
+    			</div>
+    			<div class="comment-content">
+    				<%=comment.content%>
+    			</div>
+			</div>
+		</div>
+	</div>
 <%end%>
+<div class="flexcommentinput">
+	<form action="/post" method="post" class="commentform">
+	    <input type="text" name="comment" placeholder="Comment" class="commentinput">
+	    <input type="submit">
+	</form>
+</div>
 <%end%>

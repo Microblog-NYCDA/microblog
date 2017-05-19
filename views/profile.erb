@@ -1,7 +1,8 @@
-
+<div class="profile-flex">
+<div class="profile-div">
 <form action="/profile" method="post">
-    <input type="text" name="title" placeholder="Title">
-    <input type="text" name="content" placeholder="Message">
+    
+    <input type="text" name="content" placeholder="Message" class="commentinput">
     <input type="submit">
 </form>
 
@@ -9,7 +10,7 @@
     <div class="post">
         <div class="post-title">
             <a href='/post/<%=post.id%>'>
-                <%=post.title%>
+                <%=User.find(post.user_id).name%>
             </a>
         </div>
         <div class="post-content">
@@ -21,3 +22,5 @@
 <form action="/edit_profile" method="get">
     <input type="submit" value="Edit Profile">
 </form>
+</div>
+</div>

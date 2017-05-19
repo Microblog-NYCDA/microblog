@@ -1,4 +1,6 @@
 $post-font:'PT Sans Narrow', sans-serif;
+$userNameColor:#e9faff;
+$comment-name-color:#d4ffea;
 @import 'profile';
 @import 'search';
 @import 'edit-profile';
@@ -7,4 +9,6 @@ $post-font:'PT Sans Narrow', sans-serif;
 @import 'post';
 body{
   margin:0;
+  padding:0;
+  
 }
