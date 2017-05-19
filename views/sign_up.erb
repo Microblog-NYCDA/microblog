@@ -1,13 +1,20 @@
-<form action="sign_up" method="post">
-  <input type="text" name="name" placeholder="First and Last Name">
-  <input type="text" name="username" placeholder="Username">
-  <input type="text" name="password" placeholder="Password">
-  <input type="text" name="repassword" placeholder="Re-Enter Password">
-  <input type="submit">
+<div class="hero-img">
+    <div class="login-container">
+        <div class="login">
+            <h1>Sign up:</h1>
+            <form action="sign_up" method="post">
+                <input type="text" name="name" placeholder="First and Last Name">
+                <input type="text" name="username" placeholder="Username">
+                <input type="text" name="password" placeholder="Password">
+                <input type="text" name="repassword" placeholder="Re-Enter Password">
+                <input type="submit">
+            </form>
+            <%if @error%>
+                <div>
+                    <%=@error%>
+                </div>
+            <%end%>
 
-</form>
-<%if @error%>
-<div>
-  <%=@error%>
+        </div>
+    </div>
 </div>
-<%end%>
