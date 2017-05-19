@@ -85,6 +85,10 @@ get '/logout' do
     erb :login
 end
 
+
+
+
+
 get '/friend_requests' do
     @requests = Request.where(user_id: session[:user_id])
     erb :friend_requests
@@ -99,6 +103,7 @@ post '/friend_requests' do
     Request.find(params[:request_id]).delete
     redirect '/friend_requests'
 end
+
 
 post '/request' do
   Request.create(user_id: params[:user_id], requester_id: session[:user_id])
@@ -119,4 +124,15 @@ post '/edit_profile' do
     @user.save
 
     redirect '/edit_profile'
+end
+
+get '/wall' do
+    friends=Friendship.where(user_id: session[:user_id])
+    @posts=[]
+    friends.each do |friend|
+        @posts.push(Post.where(user_id: friend.friend_id))
+
+    end
+    @posts=@posts.flatten
+    erb :wall
 end
