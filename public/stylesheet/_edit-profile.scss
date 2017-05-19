@@ -1,7 +1,30 @@
+.edit-profile-container{
+    display: flex;
+    justify-content: center;
+}
+.edit-profile-form{
+}
+
 .profile-row{
     display: flex;
     justify-content: flex-start;
+    margin: 30px;
 }
 .profile-info{
     width: 200px;
+    margin: 0;
+}
+.profile-input{
+    height: 1.5em;
+}
+
+.profile-row label{
+    width: 110px;
+    font-size: 20px;
+}
+.updateProfileBtn{
+    width: 100%;
+    max-width: 520px;
+    height: 3em;
+    font-size: 20px;
 }
