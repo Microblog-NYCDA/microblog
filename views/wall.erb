@@ -1,4 +1,7 @@
-<%@posts.each do |post|%>
+<%if @posts.length>=10%>
+<%@posts=@posts.last(10)%>
+<%end%>
+<%@posts.reverse_each do |post|%>
 <div class="wall-flex">
   <div class="wall-content">
   	<div class="wall-user">
@@ -13,3 +16,5 @@
 </div>
 
 <%end%>
+
+
