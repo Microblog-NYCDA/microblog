@@ -11,6 +11,7 @@ get '/' do
     erb :login
   end
 end
+
 post '/login' do
   username=params[:username]
   password=params[:password]
@@ -80,8 +81,9 @@ post '/post' do
     redirect '/post/' + session[:post_id]
 end
 get '/search' do
-  @users=User.all
-  erb :search
+    # @potential_friends = Friendship.where(user_id: !session[:user_id] && friend_id: !session[:user_id])
+    @users = User.all
+    erb :search
 end
 
 get '/logout' do
