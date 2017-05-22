@@ -2,6 +2,7 @@ class User <ActiveRecord::Base
   has_many :posts, dependent: :destroy
   has_many :friendships, dependent: :destroy
   has_many :comments
+  has_many :cats
 end
 
 class Post <ActiveRecord::Base
@@ -19,5 +20,8 @@ class Request <ActiveRecord::Base
 end
 
 class Friendship <ActiveRecord::Base
+  belongs_to :user
+end
+class Cat <ActiveRecord::Base
   belongs_to :user
 end

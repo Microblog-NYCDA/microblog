@@ -80,7 +80,23 @@ post '/post' do
     redirect '/post/' + session[:post_id]
 end
 get '/search' do
-  @users=User.all
+  users=User.all
+friends=Friendship.all
+@notfriends=[]
+myfriends=Friendship.where("user_id= ? or friend_id= ?", session[:user_id], session[:user_id])
+users.each do |user|
+  boolean=true
+  myfriends.each do |myfriend|
+    if myfriend.user_id==user.id || myfriend.friend_id==user.id
+      boolean=false
+    end 
+
+  end
+  if boolean==true
+    @notfriends.push(user)
+  end
+end
+
   erb :search
 end
 
@@ -131,9 +147,10 @@ post '/edit_profile' do
 end
 
 post '/friendship' do
-    friends = Friendship.where(user_id: session[:user_id])
-    exfriends = friends.where(friend_id: params[:friend_id]).first
-    exfriends.delete
+    friends = Friendship.where(user_id: session[:user_id], friend_id: params[:friend_id]).first
+    reversefriends= Friendship.where(user_id: params[:friend_id], friend_id: session[:user_id]).first
+    friends.delete
+    reversefriends.delete
 
     redirect '/profile'
 end
@@ -154,4 +171,5 @@ post '/addfile' do
  s = File.open('philly-homeless-01.jpg', 'rb') { |io| io.read }
   s.force_encoding('ASCII-8BIT')
   redirect '/profile'
+  Cat.create(user_id: session[:user_id], file: s)
 end
