@@ -4,10 +4,10 @@
 <%@posts.reverse_each do |post|%>
 <div class="wall-flex">
   <div class="wall-content">
-  	<div class="wall-user">
+  	<a class="wall-user" href="/friend_profile/<%=post.user_id%>">
   	<%=User.find(post.user_id).name%>
   		
-  	</div>
+  	</a>
     <div class="post-content"><%=post.content%></div>
     <div class="wall-comment">
       <a href='/post/<%=post.id%>'>Comment</a>

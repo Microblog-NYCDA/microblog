@@ -23,7 +23,12 @@ post '/login' do
     redirect '/'
   end
 end
-
+get '/friend_profile/:id' do
+  @user=User.find(params[:id])
+   @friendships = Friendship.where(user_id: @user.id)
+  @posts = @user.posts
+  erb :friend_profile
+end
 
 
 get '/create_account' do
