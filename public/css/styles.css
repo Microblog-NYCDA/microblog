@@ -44,7 +44,13 @@
   justify-content: center; }
 
 .profile-div {
-  width: 30%; }
+  width: 30%;
+  min-width: 300px; }
+
+.profile-friends {
+  position: absolute;
+  top: 200px;
+  left: 40px; }
 
 .search-container {
   display: flex;

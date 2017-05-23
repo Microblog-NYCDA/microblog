@@ -11,6 +11,7 @@ get '/' do
     erb :login
   end
 end
+
 post '/login' do
   username=params[:username]
   password=params[:password]
@@ -98,6 +99,7 @@ post '/post' do
     Comment.create(content: params[:comment], user_id: session[:user_id], post_id: session[:post_id])
     redirect '/post/' + session[:post_id]
 end
+
 get '/search' do
   users=User.all
 friends=Friendship.all
@@ -108,7 +110,7 @@ users.each do |user|
   myfriends.each do |myfriend|
     if myfriend.user_id==user.id || myfriend.friend_id==user.id
       boolean=false
-    end 
+    end
 
   end
   if boolean==true
@@ -117,16 +119,13 @@ users.each do |user|
 end
 
   erb :search
+
 end
 
 get '/logout' do
     session[:user_id] = nil
     erb :login
 end
-
-
-
-
 
 get '/friend_requests' do
     @requests = Request.where(user_id: session[:user_id])
@@ -165,6 +164,12 @@ post '/edit_profile' do
     redirect '/edit_profile'
 end
 
+get '/delete-account' do
+    User.find(session[:user_id]).destroy
+    session[:user_id] = nil
+    redirect '/'
+end
+
 post '/friendship' do
     friends = Friendship.where(user_id: session[:user_id], friend_id: params[:friend_id]).first
     reversefriends= Friendship.where(user_id: params[:friend_id], friend_id: session[:user_id]).first
@@ -186,7 +191,7 @@ get '/wall' do
 end
 post '/addfile' do
   file=params[:file]
- 
+
  s = File.open('philly-homeless-01.jpg', 'rb') { |io| io.read }
   s.force_encoding('ASCII-8BIT')
   redirect '/profile'
