@@ -15,14 +15,20 @@ end
 post '/login' do
   username=params[:username]
   password=params[:password]
-  user=User.where(username: username).first
 
-  if password==user[:password]
-    session[:user_id] = user.id
-    redirect '/'
+  if User.where(username: username) != []
+      user = User.where(username: username).first
+      if password==user[:password]
+        session[:user_id] = user.id
+        redirect '/'
+      else
+        redirect '/'
+      end
   else
-    redirect '/'
+      redirect '/'
   end
+
+
 end
 get '/friend_profile/:id' do
   @user=User.find(params[:id])
