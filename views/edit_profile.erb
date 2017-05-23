@@ -1,32 +1,40 @@
 
 <div class="edit-profile-container">
 
-<form class="edit-profile-form" action="/edit_profile" method="post">
-    <div class="profile-row">
-        <label>Name:</label>
-        <h2 class="profile-info"> <%= @user.name %> </h2>
-        <input class="profile-info profile-input" type="text" name="new_name" value="<%= @user.name %>">
-    </div>
-    <div class="profile-row">
-        <label>Username:</label>
-        <h3 class="profile-info"> <%= @user.username %> </h3>
-        <input class="profile-info profile-input" type="text" name="new_username" value="<%= @user.username %>">
-    </div>
-    <div class="profile-row">
-        <label>City:</label>
-        <h4 class="profile-info"> <%= @user.city %> </h4>
-        <input class="profile-info profile-input" type="text" name="new_city" value="<%= @user.city %>" placeholder="Enter your city here">
-    </div>
+    <form class="edit-profile-form" action="/edit_profile" method="post">
+        <div class="profile-row">
+            <label>Name:</label>
+            <h2 class="profile-info"> <%= @user.name %> </h2>
+            <input class="profile-info profile-input" type="text" name="new_name" value="<%= @user.name %>">
+        </div>
+        <div class="profile-row">
+            <label>Username:</label>
+            <h3 class="profile-info"> <%= @user.username %> </h3>
+            <input class="profile-info profile-input" type="text" name="new_username" value="<%= @user.username %>">
+        </div>
+        <div class="profile-row">
+            <label>City:</label>
+            <h4 class="profile-info"> <%= @user.city %> </h4>
+            <input class="profile-info profile-input" type="text" name="new_city" value="<%= @user.city %>" placeholder="Enter your city here">
+        </div>
 
-    <div class="profile-row">
-        <label>Age:</label>
-        <h4 class="profile-info"> <%= @user.age %> </h4>
-        <input class="profile-info profile-input" type="number" name="new_age" value="<%= @user.age %>" placeholder="Enter your age here">
-    </div>
+        <div class="profile-row">
+            <label>Age:</label>
+            <h4 class="profile-info"> <%= @user.age %> </h4>
+            <input class="profile-info profile-input" type="number" name="new_age" value="<%= @user.age %>" placeholder="Enter your age here">
+        </div>
 
-    <div class="profile-row">
-        <input class="updateProfileBtn" type="submit" value="Update Profile">
-    </div>
-</form>
+        <div class="profile-row">
+            <input class="updateProfileBtn" type="submit" value="Update Profile">
+        </div>
+    </form>
 
-</div
+
+
+</div>
+<div class="edit-profile-container">
+    <form action="/delete-account" method="get">
+        <input class="updateProfileBtn" type="submit" value="Destroy Account">
+    </form>
+
+</div>

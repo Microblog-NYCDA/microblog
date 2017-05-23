@@ -10,7 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170519205808) do
+ActiveRecord::Schema.define(version: 20170519211447) do
+
+  create_table "cats", force: :cascade do |t|
+    t.integer "user_id"
+    t.binary "file"
+  end
 
   create_table "comments", force: :cascade do |t|
     t.string "content"

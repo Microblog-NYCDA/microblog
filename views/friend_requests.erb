@@ -5,13 +5,18 @@
     </div>
     <form action="/friend_requests" method="post">
         <input type="hidden" name="friend_id" value="<%= request.requester_id %>">
+         <input type="hidden" name="request_id" value="<%= request.id %>">
+
         <input type="hidden" name="request_id" value="<%= request.id %>">
         <input type="submit" name="response" value="Accept">
+
     </form>
     <form action="/friend_requests" method="post">
         <input type="hidden" name="friend_id" value="<%= request.requester_id %>">
         <input type="hidden" name="request_id" value="<%= request.id %>">
         <input type="submit" name="response" value="Reject">
+        <input type="hidden" name="friend_id" value="<%= request.requester_id %>">
+        <input type="hidden" name="request_id" value="<%= request.id %>">
     </form>
 
 <% end %>

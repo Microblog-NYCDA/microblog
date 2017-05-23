@@ -96,7 +96,9 @@
   margin-bottom: 10px; }
 
 .wall-user {
-  background-color: #e9faff; }
+  background-color: #e9faff;
+  width: 100%;
+  display: block; }
 
 .wall-flex {
   display: flex;
