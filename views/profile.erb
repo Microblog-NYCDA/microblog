@@ -17,6 +17,10 @@
                 <div class="post-content">
                     <%=post.content%>
                 </div>
+                  <div class="wall-comment">
+                  <a href="/edit_post/<%=post.id%>">Edit Post</a>
+                <a href='/post/<%=post.id%>'>Comment</a>
+                </div>
             </div>
         <%end%>
 

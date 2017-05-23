@@ -1,0 +1,39 @@
+<div class="postflex">
+<div class="post-and-comment-box">
+<div class="userandpost">
+<div class="post-user-name">
+    <%=User.find(@post.user_id).name%>
+</div>
+<div class="post-user-content">
+    
+    <form action="/edit_post" method="post">
+                        <input class="edit_post" type="text" name="edit" value="<%=@post.content%>">
+                        <input class="edit_post_submit" type="submit">
+                    </form>
+</div>
+</div>
+
+</div>
+</div>
+<%if @comments%>
+    <%@comments.each do |comment|%>
+    <div class="flexcomment">
+    	<div class="allcomments">
+    		<div class="commentcontainer">
+    			<div class="commentnamecolor">
+    			<%=User.find(comment.user_id).name%>
+    			</div>
+    			<div class="comment-content">
+    				<%=comment.content%>
+    			</div>
+			</div>
+		</div>
+	</div>
+<%end%>
+<div class="flexcommentinput">
+	<form action="/post" method="post" class="commentform">
+	    <input type="text" name="comment" placeholder="Comment" class="commentinput">
+	    <input type="submit">
+	</form>
+</div>
+<%end%>

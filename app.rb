@@ -23,6 +23,20 @@ post '/login' do
     redirect '/'
   end
 end
+get '/edit_post/:id' do
+  post_id=params[:id]
+    @post=Post.find(post_id)
+    session[:post_id]=post_id
+    @comments=Comment.where(post_id: post_id)
+    erb :edit_post
+end
+post '/edit_post' do
+  post=Post.find(session[:post_id])
+  post.content=params[:edit]
+  post.save
+  redirect '/profile'
+end
+
 get '/friend_profile/:id' do
   @user=User.find(params[:id])
    @friendships = Friendship.where(user_id: @user.id)
